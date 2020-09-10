@@ -21,6 +21,9 @@ docker image build -t flask-sample .
 Step 3: Verify the image
 ```
 docker image ls
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+flask-sample        latest              c1b7a8a29e9b        10 seconds ago      53.3MB
+python              3.8.5-alpine        0f03316d4a27        45 hours ago        42.7MB
 ```
 
 Step 4: Run the container
@@ -49,14 +52,12 @@ docker container logs flask-web
  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
  * Restarting with stat
  * Debugger is active!
- * Debugger PIN: 145-213-795
-172.18.0.1 - - [10/Sep/2020 17:17:34] "GET / HTTP/1.1" 200 -
-172.18.0.1 - - [10/Sep/2020 17:17:34] "GET /favicon.ico HTTP/1.1" 404 -
-172.17.0.1 - - [10/Sep/2020 17:31:43] "GET / HTTP/1.1" 200 -
+ * Debugger PIN: 171-688-111
+172.17.0.1 - - [10/Sep/2020 17:41:31] "GET / HTTP/1.1" 200 -
 ```
 ## Cleanup
 
-Simple stop and remove the created container
+Stop and remove the container
 ```
 docker rm -f flask-web
 ```
