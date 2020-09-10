@@ -54,10 +54,16 @@ docker container logs flask-web
 172.18.0.1 - - [10/Sep/2020 17:17:34] "GET /favicon.ico HTTP/1.1" 404 -
 172.17.0.1 - - [10/Sep/2020 17:31:43] "GET / HTTP/1.1" 200 -
 ```
-## Cleanip
+## Cleanup
+
 Simple stop and remove the created container
 ```
-docker stop flask-web
+docker rm -f flask-web
+```
+
+Optionally, remove the create image
+```
+docker rmi flask-sample
 ```
 
 
