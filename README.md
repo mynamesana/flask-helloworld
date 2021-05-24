@@ -8,12 +8,12 @@ Docker
 ## Running the application
 
 Step 1: Build docker image using remote context 
-```
-docker build -t flask-sample https://github.com/maroskukan/flask-sample.git#master:src
+```bash
+docker build -t flask-sample https://github.com/maroskukan/flask-sample.git
 ```
 
 Step 2: Verify the image
-```
+```bash
 docker image ls
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 flask-sample        latest              c1b7a8a29e9b        10 seconds ago      53.3MB
@@ -21,14 +21,14 @@ python              3.8.5-alpine        0f03316d4a27        45 hours ago        
 ```
 
 Step 3: Run the container
-```
+```bash
 docker run -d -p 5000:5000 --name flask-web flask-sample
 ```
 
 ## Verifying the application
 
 Step 1: Verify the application using curl
-```
+```html
 curl http://localhost:5000
 <!DOCTYPE thml>
 <html lang="en">
@@ -42,7 +42,7 @@ curl http://localhost:5000
 ```
 
 Step 2: Verify application logs
-```
+```bash
 docker container logs flask-web
  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
  * Restarting with stat
@@ -53,12 +53,12 @@ docker container logs flask-web
 ## Cleanup
 
 Step 1: Stop and remove the container
-```
+```bash
 docker rm -f flask-web
 ```
 
 Step 2: Optionally, remove the create image
-```
+```bash
 docker rmi flask-sample
 ```
 
